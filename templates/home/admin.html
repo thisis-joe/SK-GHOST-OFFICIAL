@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>SK GHOST OP</title>
+    <script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!--    <script>-->
+    <!--        // SDK를 초기화 합니다. 애플리케이션 > 앱 설정 > 앱 키 : JAVASCRIPT KEY 입력하세요-->
+    <!--        Kakao.init('2e39201190179fe7cd5eb25903daba8a');-->
+    <!--        //console.log(Kakao.isInitialized()); SDK 초기화 여부를 판단합니다.-->
+    <!--    </script>-->
+    <link rel = "stylesheet" href = "css/admin/admin.css">
+
+    <script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        // SDK를 초기화 합니다. 애플리케이션 > 앱 설정 > 앱 키 : JAVASCRIPT KEY 입력하세요
+        Kakao.init('2e39201190179fe7cd5eb25903daba8a');
+        //console.log(Kakao.isInitialized()); SDK 초기화 여부를 판단합니다.
+    </script>
+
+    <script src = "../../JavaScript/go.js"></script>
+    <script src = "../../JavaScript/loginOPWithKakao.js"></script>
+    <script src = "../../JavaScript/loginWithKakaoForAdmin.js"></script>
+    <script src = "../../JavaScript/unlinkWithKakao.js"></script>
+    <script src = "../../JavaScript/shareMessage.js"></script>
+    <script src = "../../JavaScript/sendToMe.js"></script>
+    <script src = "../../JavaScript/sendFriends.js"></script>
+    <script src = "../../JavaScript/getFriendUuid.js"></script>
+    <script src = "../../JavaScript/refreshAccessToken.js"></script>
+</head>
+
+<body id = "body">
+
+<!--header-->
+<header id = "header"> <!-- div 와  <header>의 차이란?>? -->
+    <img id = "header_sk" src="css/images/Ghost.png" alt = "location images"> <!-- GHOST 트레이드 마크 -->
+    <p id = "header_logo">SK GHOST OP</p>
+</header>
+<!--section-->
+<div id = "section">
+    <!--section_top-->
+    <div id = "section_top">
+        <img id="img1" src="css/images/Admin1.png"/>
+    </div>
+    <!--section_botttom-->
+    <div id = "section_bottom">
+        <button id="custom-modify-btn" onClick="sendToMe(); sendToFriends()">
+            Start Work
+        </button>
+
+        <button id="custom-new-btn" href="javascript:shareMessage()">
+            End Work
+        </button>
+
+    </div>
+</div>
+
+<div id = "footer">
+</div>
+
+</body>
+
+</html>
+

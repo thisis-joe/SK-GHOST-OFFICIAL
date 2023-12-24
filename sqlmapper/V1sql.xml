@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="GHOST.ghost.dao.V1Dao">
+
+    <!-- 전체 사용자 조회 -->
+    <select id="userList" resultType="map">
+        select * from user_info
+    </select>
+
+    <!-- 금일 담당 운영 대응자 조회 -->
+    <select id="shiftAdminList" resultType="map">
+    <!--select * from friend-->
+    <!--1차 대응자만 선택한 쿼리  WMS는 3차까지 있음-->
+        SELECT CAST(es.id AS CHAR) AS id, es.name, CAST(es.date AS CHAR) AS date, es.shift, f.uuid, CAST(es.priority AS CHAR) AS priority
+        FROM elec_shift es
+        INNER JOIN friend f
+        ON es.id = f.id
+        WHERE es.priority IN (1,2) AND (DATE_FORMAT(CURDATE(),"%Y-%m-%d")=DATE_FORMAT(es.date,"%Y-%m-%d"))
+        ORDER BY es.priority
+    </select>
+</mapper>
+
